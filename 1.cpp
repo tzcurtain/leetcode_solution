@@ -1,6 +1,9 @@
 #include <bits/stdc++.h> // for conveience
 using namespace std;
 
+/*
+    使用Hash表解决
+ */
 class Solution {
 private:
     map<int,int> m;
