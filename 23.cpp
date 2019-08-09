@@ -23,9 +23,7 @@ public:
         else {
             int mid = (left + right) / 2;
             ListNode* l = mergeKLists(lists,left,mid);
-            cout << l->val;
             ListNode* r = mergeKLists(lists,mid+1,right);
-            cout << r->val;
             return mergeLists(l,r);
         }
     }
