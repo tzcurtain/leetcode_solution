@@ -4,7 +4,12 @@ import (
 	"sort"
 )
 
-func sliceEqual(a, b []int) bool {
+/*
+	有点像无限背包and有限背包的区别
+	改个循环顺序
+*/
+
+func sliceEquals2(a, b []int) bool {
 	if len(a) != len(b) {
 		return false
 	}
@@ -20,15 +25,23 @@ func sliceEqual(a, b []int) bool {
 	return true
 }
 
-func combinationSum(candidates []int, target int) [][]int {
+func combinationSum2(candidates []int, target int) [][]int {
 	m := make(map[int][][]int, target+2)
 
-	for i := 1; i <= target; i++ {
-		for _, j := range candidates {
-
+	for _, j := range candidates {
+		for i := target; i >= 1; i-- {
 			if i == j {
 				arr := []int{j}
-				m[i] = append(m[i], arr)
+				insert := true
+				for _, p := range m[i] {
+					if sliceEquals2(arr, p) {
+						insert = false
+						break
+					}
+				}
+				if insert {
+					m[i] = append(m[i], arr)
+				}
 			} else if i > j {
 				for _, k := range m[i-j] {
 					kk := make([]int, len(k))
@@ -37,7 +50,7 @@ func combinationSum(candidates []int, target int) [][]int {
 					sort.Ints(kk)
 					insert := true
 					for _, p := range m[i] {
-						if sliceEqual(kk, p) {
+						if sliceEquals2(kk, p) {
 							insert = false
 							break
 						}
@@ -55,7 +68,7 @@ func combinationSum(candidates []int, target int) [][]int {
 }
 
 // func main() {
-// 	candidates := []int{7, 3, 2}
-// 	target := 18
-// 	fmt.Println(combinationSum(candidates, target))
+// 	candidates := []int{2, 5, 2, 1, 2}
+// 	target := 5
+// 	fmt.Println(combinationSum2(candidates, target))
 // }
