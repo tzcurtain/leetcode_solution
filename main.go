@@ -3,5 +3,5 @@ package main
 import "fmt"
 
 func main() {
-	fmt.Print(trap([]int{0, 2, 0}))
+	fmt.Print(multiply("9", "9"))
 }
