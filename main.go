@@ -3,5 +3,5 @@ package main
 import "fmt"
 
 func main() {
-	fmt.Print(multiply("9", "9"))
+	fmt.Print(jump([]int{2, 3, 1, 1, 4}))
 }

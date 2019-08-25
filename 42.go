@@ -6,12 +6,7 @@ package main
 		min(a,b) - height[i]
 */
 
-func min(a, b int) int {
-	if a > b {
-		return b
-	}
-	return a
-}
+
 
 func trap(height []int) int {
 	lmaxi := make([]int, len(height)+2)
