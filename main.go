@@ -3,5 +3,5 @@ package main
 import "fmt"
 
 func main() {
-	fmt.Print(jump([]int{2, 3, 1, 1, 4}))
+	fmt.Print(permuteUnique([]int{1, 1, 2}))
 }
