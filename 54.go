@@ -1,13 +1,5 @@
 package main
 
-/* 迷宫方向常量 */
-const (
-	SpiralRight = iota 
-	SpiralDown
-	SpiralLeft
-	SpiralUp
-)
-
 func spiralOrder(matrix [][]int) []int {
 	var res []int
 	if len(matrix) == 0 {

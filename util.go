@@ -2,6 +2,9 @@ package main
 
 import "math"
 
+/*
+	const
+*/
 const (
 	Modint = 1000000007
 )
@@ -12,6 +15,14 @@ func min(a, b int) int {
 	}
 	return a
 }
+
+/* 迷宫方向常量 */
+const (
+	SpiralRight = iota
+	SpiralDown
+	SpiralLeft
+	SpiralUp
+)
 
 func max(a, b int) int {
 	if a > b {
@@ -27,4 +38,8 @@ func isPrime(a int) bool {
 		}
 	}
 	return true
+}
+
+func isAlpha(a byte) bool {
+	return (a >= 'a' && a <= 'z') || (a >= 'A' && a <= 'Z')
 }
