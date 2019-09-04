@@ -3,6 +3,6 @@ package main
 import "fmt"
 
 func main() {
-	fmt.Print(generateMatrix(5))
+	fmt.Print(getPermutation(3, 5))
 
 }
