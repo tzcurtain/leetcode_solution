@@ -9,6 +9,11 @@ const (
 	Modint = 1000000007
 )
 
+type ListNode struct {
+	Val  int
+	Next *ListNode
+}
+
 func min(a, b int) int {
 	if a > b {
 		return b
