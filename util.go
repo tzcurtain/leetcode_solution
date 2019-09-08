@@ -9,6 +9,9 @@ const (
 	Modint = 1000000007
 )
 
+/*
+	LinkList
+*/
 type ListNode struct {
 	Val  int
 	Next *ListNode
