@@ -10,7 +10,7 @@ const (
 )
 
 /*
-	LinkList
+ListNode type definition
 */
 type ListNode struct {
 	Val  int
