@@ -3,6 +3,6 @@ package main
 import "fmt"
 
 func main() {
-	fmt.Print(isNumber("   0"))
+	fmt.Print(simplifyPath("/a//b////c/d//././/.."))
 
 }
