@@ -3,6 +3,7 @@ package main
 import "fmt"
 
 func main() {
-	fmt.Print(simplifyPath("/a//b////c/d//././/.."))
-
+	matrix := [][]int{{1, 0}}
+	setZeroes(matrix)
+	fmt.Print(matrix)
 }
