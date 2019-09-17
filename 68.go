@@ -4,11 +4,11 @@ import "bytes"
 
 func fullJustify(words []string, maxWidth int) []string {
 	var res []string
-	wordlen := len(words)
+	wordArrLen := len(words)
 	bef := 0
 	now := 1
 	nowlen := len(words[0])
-	for now < wordlen {
+	for now < wordArrLen {
 		if nowlen+len(words[now]) <= maxWidth {
 			nowlen += len(words[now])
 		} else {
@@ -25,6 +25,6 @@ func fullJustify(words []string, maxWidth int) []string {
 		buf.WriteString(words[i])
 	}
 	res = append(res, buf.String())
-	
+
 	return res
 }
