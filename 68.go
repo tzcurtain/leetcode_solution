@@ -1,30 +1,65 @@
 package main
 
-import "bytes"
+import (
+	"bytes"
+)
 
 func fullJustify(words []string, maxWidth int) []string {
 	var res []string
-	wordArrLen := len(words)
-	bef := 0
-	now := 1
-	nowlen := len(words[0])
-	for now < wordArrLen {
-		if nowlen+len(words[now]) <= maxWidth {
-			nowlen += len(words[now])
-		} else {
-			var buf bytes.Buffer
+	now := 0
+	wordLen := len(words)
+	nowUsed, wordCount := 0, 0
+	for now <= wordLen {
+		if now == wordLen || nowUsed+len(words[now])+wordCount > maxWidth {
+			//fmt.Println(now)
+			totalComma := maxWidth - nowUsed
+			avgComma, extraComma := totalComma, 0
+			if wordCount != 1 {
+				avgComma = totalComma / (wordCount - 1)
+				extraComma = totalComma % (wordCount - 1)
+			}
+			if now == wordLen {
+				avgComma = 1
+				extraComma = 0
+			}
 
-			res = append(res, buf.String())
-			bef = now
-			nowlen = len(words[now])
+			var writeBuf bytes.Buffer
+			// fmt.Println("Comma", avgComma, extraComma)
+			writeBuf.WriteString(words[now-wordCount])
+
+			for i := now - wordCount + 1; i < now; i++ {
+				if i-now+wordCount <= extraComma {
+					writeBuf.WriteByte(' ')
+				}
+				for j := 1; j <= avgComma; j++ {
+					writeBuf.WriteByte(' ')
+				}
+				writeBuf.WriteString(words[i])
+			}
+			if wordCount == 1 && now != wordLen {
+				for i := 1; i <= avgComma; i++ {
+					writeBuf.WriteByte(' ')
+				}
+			}
+
+			if now == wordLen {
+				remainLen := maxWidth - writeBuf.Len()
+				for i := 1; i <= remainLen; i++ {
+					writeBuf.WriteByte(' ')
+				}
+			}
+
+			res = append(res, writeBuf.String())
+			if now != wordLen {
+				nowUsed = len(words[now])
+				wordCount = 1
+			}
+		} else {
+			nowUsed += len(words[now])
+			wordCount++
 		}
 		now++
 	}
-	var buf bytes.Buffer
-	for i := bef; i < now; i++ {
-		buf.WriteString(words[i])
-	}
-	res = append(res, buf.String())
 
 	return res
 }
