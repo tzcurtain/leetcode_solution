@@ -18,15 +18,11 @@ func searchRotation(nums []int, target, l, r int) bool {
 	if target > nums[mid] {
 		if nums[l] >= nums[mid] && nums[mid] <= nums[r] {
 			return searchRotation(nums, target, mid+1, r) || searchRotation(nums, target, l, mid-1)
-		} else {
-			return searchRotation(nums, target, mid+1, r)
 		}
-	} else {
-		if nums[mid] >= nums[l] && nums[mid] >= nums[r] {
-			return searchRotation(nums, target, mid+1, r) || searchRotation(nums, target, l, mid-1)
-		} else {
-			return searchRotation(nums, target, l, mid-1)
-		}
+		return searchRotation(nums, target, mid+1, r)
 	}
-
+	if nums[mid] >= nums[l] && nums[mid] >= nums[r] {
+		return searchRotation(nums, target, mid+1, r) || searchRotation(nums, target, l, mid-1)
+	}
+	return searchRotation(nums, target, l, mid-1)
 }
