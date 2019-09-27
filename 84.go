@@ -1,5 +1,9 @@
 package main
 
+/*
+	单调栈
+*/
+
 func largestRectangleArea(heights []int) int {
 	if len(heights) == 0 {
 		return 0
