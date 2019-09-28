@@ -1,6 +1,9 @@
 package main
 
-import "math"
+import (
+	"fmt"
+	"math"
+)
 
 /*
 	const
@@ -15,6 +18,34 @@ ListNode type definition
 type ListNode struct {
 	Val  int
 	Next *ListNode
+}
+
+/* util to make linklist
+@return *ListNode
+*/
+func makeLinkList(head *ListNode, arr []int) *ListNode {
+	if len(arr) == 0 {
+		return head
+	}
+	head.Val = arr[0]
+	tmp := head
+	for i := 1; i < len(arr); i++ {
+		tmp.Next = new(ListNode)
+		tmp = tmp.Next
+		tmp.Val = arr[i]
+	}
+
+	return head
+}
+
+func printLinkList(head *ListNode) {
+	for head != nil {
+		fmt.Print(head.Val)
+		head = head.Next
+		if head != nil {
+			fmt.Print("->")
+		}
+	}
 }
 
 func min(a, b int) int {
