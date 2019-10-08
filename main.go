@@ -3,5 +3,5 @@ package main
 import "fmt"
 
 func main() {
-	fmt.Println(grayCode(3))
+	fmt.Println(numDecodings("110"))
 }
