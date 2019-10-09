@@ -3,5 +3,5 @@ package main
 import "fmt"
 
 func main() {
-	fmt.Println(numDecodings("110"))
+	fmt.Println(restoreIpAddresses("010010"))
 }
