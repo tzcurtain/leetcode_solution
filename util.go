@@ -20,6 +20,15 @@ type ListNode struct {
 	Next *ListNode
 }
 
+/*
+TreeNode type definition
+*/
+type TreeNode struct {
+	Val   int
+	Left  *TreeNode
+	Right *TreeNode
+}
+
 /* util to make linklist
 @return *ListNode
 */

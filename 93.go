@@ -2,11 +2,11 @@ package main
 
 import (
 	"bytes"
-	"strconv"
 	"fmt"
+	"strconv"
 )
 
-func restoreIpAddresses(s string) []string {
+func restoreIPAddresses(s string) []string {
 	var res []string
 	for i := 1; i <= 3; i++ {
 		for j := 1; j <= 3; j++ {
@@ -22,7 +22,7 @@ func restoreIpAddresses(s string) []string {
 
 				ok := true
 				for i := 0; i <= 3; i++ {
-					ipval, _ := strconv.ParseInt(ip[i],10,16)
+					ipval, _ := strconv.ParseInt(ip[i], 10, 16)
 					fmt.Println(ipval)
 					if ipval > 255 || notValidNumber(ip[i]) {
 						ok = false
