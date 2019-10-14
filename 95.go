@@ -7,8 +7,11 @@ func generateTrees(n int) []*TreeNode {
 	}
 
 	var res []*TreeNode
-
-	generateTreesRecursive()
-
+	for i := range tmp {
+		nowRoot := new(TreeNode)
+		nowRoot.Val = tmp[i]
+		nowRoot.Left, nowRoot.Right = nil, nil
+		// generateTreesRecursive(nowRoot, tmp[:i], tmp[i+1:], res))
+	}
 	return res
 }
