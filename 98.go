@@ -19,7 +19,5 @@ func isValidBSTRecur(root *TreeNode, minVal, maxVal int) bool {
 }
 
 func isValidBST(root *TreeNode) bool {
-	const IntMax = int(^uint(0) >> 1)
-	const IntMin = ^IntMax
 	return isValidBSTRecur(root, IntMin, IntMax)
 }

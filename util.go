@@ -10,6 +10,8 @@ import (
 */
 const (
 	Modint = 1000000007
+	IntMax = int(^uint(0) >> 1)
+	IntMin = ^IntMax
 )
 
 /*
