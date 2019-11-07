@@ -3,5 +3,5 @@ package main
 import "fmt"
 
 func main() {
-	fmt.Println(numTrees(3))
+	fmt.Println(isPalindrome("A man, a plan, a canal: Panama"))
 }

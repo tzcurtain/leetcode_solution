@@ -90,6 +90,22 @@ func isPrime(a int) bool {
 	return true
 }
 
-func isAlpha(a byte) bool {
-	return (a >= 'a' && a <= 'z') || (a >= 'A' && a <= 'Z')
+func isUpperCase(ch byte) bool {
+	return ch >= 'A' && ch <= 'Z'
+}
+
+func isLowerCase(ch byte) bool {
+	return ch >= 'a' && ch <= 'z'
+}
+
+func isDigit(ch byte) bool {
+	return ch >= '0' && ch <= '9'
+}
+
+func isAlpha(ch byte) bool {
+	return isUpperCase(ch) || isLowerCase(ch)
+}
+
+func isAlDigit(ch byte) bool {
+	return isAlpha(ch) || isDigit(ch)
 }
