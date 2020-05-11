@@ -1,3 +1,5 @@
+package main
+
 type LRUCache struct {
 	m        map[int]*DoubleListNode
 	cap      int
