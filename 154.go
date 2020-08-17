@@ -18,9 +18,8 @@ func findMinRecur(nums []int, l, r int) int {
 	} else if nums[l] > nums[r] {
 		if nums[mid] <= nums[r] {
 			return findMinRecur(nums, l, mid)
-		} else {
-			return findMinRecur(nums, mid, r)
 		}
+		return findMinRecur(nums, mid, r)
 	} else {
 		return min(findMinRecur(nums, l, mid), findMinRecur(nums, mid+1, r))
 	}
