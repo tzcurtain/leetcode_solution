@@ -1,12 +1,5 @@
 package main
 
-func abs(a int) int {
-	if a < 0 {
-		return -a
-	}
-	return a
-}
-
 func firstMissingPositive(nums []int) int {
 	n := len(nums)
 	for i := range nums {
