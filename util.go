@@ -23,6 +23,15 @@ type ListNode struct {
 }
 
 /*
+DListNode type definition
+*/
+type DListNode struct {
+	Val  int
+	Next *DListNode
+	Bef  *DListNode
+}
+
+/*
 TreeNode type definition
 */
 type TreeNode struct {
