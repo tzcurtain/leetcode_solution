@@ -2,6 +2,7 @@
 !.gitignore
 !*.cpp
 !*.go
+!*.py
 !*.h
 !cpp/
 !go/
